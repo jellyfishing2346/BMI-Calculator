@@ -14,7 +14,7 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
 
     // Convert weight to kilograms if in pounds
     if (weightUnit === 'lb') {
-        weight = weight * 2.205;
+        weight = weight * 0.453592;
     }
 
     // Convert height to meters if in inches
