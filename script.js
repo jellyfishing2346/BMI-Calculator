@@ -23,7 +23,7 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
     }
 
     // BMI Calculation (weight in kg, height in meters)
-    const bmi = weight / (height * height);
+    const bmi = weight / (height ** height);
     
     // Display the result
     document.getElementById('bmiResult').textContent = bmi.toFixed(2);
