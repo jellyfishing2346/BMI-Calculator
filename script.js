@@ -1,7 +1,7 @@
 document.getElementById('calculateBtn').addEventListener('click', function() {
     // Get user input
-    const weight = parseFloat(document.getElementById('weight').value);
-    const height = parseFloat(document.getElementById('height').value);
+    let weight = parseFloat(document.getElementById('weight').value);
+    let height = parseFloat(document.getElementById('height').value);
 
     // Get the selected units
     const weightUnit = document.querySelector('input[name="weightUnit"]:checked').value;
