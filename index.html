@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BMI Calculator</title>
-  <!-- Link to the CSS file -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h1>BMI Calculator</h1>
+    <img src="scale-icon.png" alt="Scale Icon" width="50"> <!-- Add your icon -->
     <form id="bmiForm">
       <label for="height">Height:</label>
       <input type="text" id="height" placeholder="Enter height">
@@ -17,14 +17,13 @@
       <label for="weight">Weight:</label>
       <input type="text" id="weight" placeholder="Enter weight">
       <br>
-      <div class="radio-group">
-        <label>
-          <input type="radio" name="unit" value="metric" checked> Metric (cm/kg)
-        </label>
-        <label>
-          <input type="radio" name="unit" value="imperial"> Imperial (inches/lbs)
-        </label>
-      </div>
+      <label>
+        <input type="radio" name="unit" value="metric" checked> Metric (cm/kg)
+      </label>
+      <label>
+        <input type="radio" name="unit" value="imperial"> Imperial (inches/lbs)
+      </label>
+      <br>
       <button type="button" onclick="calculateBMI()">Calculate BMI</button>
     </form>
     <div class="result" id="result">
@@ -33,7 +32,6 @@
       Category: <span id="bmiCategory" class="bmi-category"></span>
     </div>
   </div>
-  <!-- Link to the JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
