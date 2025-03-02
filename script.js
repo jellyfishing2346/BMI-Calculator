@@ -1,41 +1,33 @@
-document.addEventListener('DOMContentLoaded', function () {
-    function calculateBMI() {
-      const height = parseFloat(document.getElementById('height').value);
-      const weight = parseFloat(document.getElementById('weight').value);
-      const unit = document.querySelector('input[name="unit"]:checked').value;
-  
-      // Validate inputs
-      if (!height || !weight || isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-        document.getElementById('bmiValue').textContent = 'Error';
-        document.getElementById('bmiCategory').textContent = 'Invalid input';
-        return;
-      }
-  
-      let bmi;
-      if (unit === 'metric') {
-        bmi = (weight / ((height / 100) ** 2)).toFixed(2);
-      } else {
-        bmi = ((weight * 703) / (height ** 2)).toFixed(2);
-      }
-  
-      // Check for Infinity or invalid BMI
-      if (!isFinite(bmi)) {
-        document.getElementById('bmiValue').textContent = 'Error';
-        document.getElementById('bmiCategory').textContent = 'Invalid input';
-        return;
-      }
-  
-      document.getElementById('bmiValue').textContent = bmi;
-      document.getElementById('bmiCategory').textContent = getBMICategory(bmi);
-    }
-  
-    function getBMICategory(bmi) {
-      if (bmi < 18.5) return 'Underweight';
-      if (bmi >= 18.5 && bmi < 24.9) return 'Normal';
-      if (bmi >= 25 && bmi < 29.9) return 'Overweight';
-      return 'Obese';
-    }
-  
-    // Attach the function to the button
-    document.querySelector('button').addEventListener('click', calculateBMI);
-  });
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('calculateBtn').addEventListener('click', function() {
+        // Get user input for weight and height
+        let weight = parseFloat(document.getElementById('weight').value);
+        let height = parseFloat(document.getElementById('height').value);
+
+        // Get the selected units for weight and height
+        const weightUnit = document.querySelector('input[name="weightUnit"]:checked').value;
+        const heightUnit = document.querySelector('input[name="heightUnit"]:checked').value;
+
+        // Check if weight and height are valid numbers
+        if (isNaN(weight) || isNaN(height)) {
+            alert("Please enter valid numbers for weight and height.");
+            return;
+        }
+
+        // Convert weight to kilograms if the unit is pounds
+        if (weightUnit === 'lb') {
+            weight = weight * 0.453592; // Convert pounds to kilograms
+        }
+
+        // Convert height to meters if the unit is inches
+        if (heightUnit === 'in') {
+            height = height * 0.0254; // Convert inches to meters
+        }
+
+        // Correct BMI Calculation (weight in kg, height in meters)
+        const bmi = weight / (height * height); // Use height^2 (height * height)
+
+        // Display the result
+        document.getElementById('bmiResult').textContent = bmi.toFixed(2);
+    });
+});
