@@ -1,56 +1,46 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('https://source.unsplash.com/1600x900/?fitness,health') no-repeat center center fixed;
+    background-image: url('fitness-background.jpg'); /* Add your background image */
     background-size: cover;
-    color: white;
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-}
-
-.container {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px;
-    border-radius: 15px;
-    width: 300px;
-    margin: 100px auto;
-    text-align: left;
-}
-
-h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.input-section {
-    margin-bottom: 20px;
-}
-
-input[type="text"] {
-    padding: 8px;
-    margin-top: 5px;
-    width: 100%;
-}
-
-input[type="radio"] {
-    margin: 0 10px;
-}
-
-button {
-    background-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="text"], input[type="radio"] {
+    margin: 10px 0;
+  }
+  
+  button {
+    background: #007BFF;
     color: white;
-    padding: 10px 20px;
     border: none;
+    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-#result {
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  .result {
     margin-top: 20px;
-    font-size: 24px;
-}
+    font-size: 1.2em;
+  }
+  
+  .bmi-category {
+    font-weight: bold;
+    color: #007BFF;
+  }
