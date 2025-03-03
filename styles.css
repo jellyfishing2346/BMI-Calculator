@@ -49,9 +49,20 @@ input[type="text"]:focus {
   border-color: #2575fc; /* Blue border on focus */
 }
 
+/* Improve label styling */
+label {
+  display: block; /* Make labels appear above inputs */
+  font-size: 1em;
+  color: #222; /* Slightly darker for better readability */
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 /* Radio buttons */
 .radio-group {
-  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .radio-group label {
