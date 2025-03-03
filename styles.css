@@ -1,46 +1,118 @@
+/* Vibrant gradient background */
 body {
-    background-image: url('fitness-background.jpg'); /* Add your background image */
-    background-size: cover;
-    font-family: Arial, sans-serif;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-  }
-  
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple to blue gradient */
+  font-family: Arial, sans-serif;
+  color: #fff; /* White text for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Stylish container */
+.container {
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Heading style */
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333; /* Dark text for contrast */
+}
+
+/* Scale icon */
+img {
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #6a11cb; /* Purple border */
+  border-radius: 5px;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #2575fc; /* Blue border on focus */
+}
+
+/* Radio buttons */
+.radio-group {
+  margin: 15px 0;
+}
+
+.radio-group label {
+  display: inline-block;
+  margin: 5px 10px;
+  font-size: 1em;
+  color: #555; /* Dark gray text */
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Calculate button */
+button {
+  background: #6a11cb; /* Purple background */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #2575fc; /* Blue background on hover */
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Result display */
+.result {
+  margin-top: 25px;
+  font-size: 1.2em;
+  padding: 15px;
+  background: rgba(106, 17, 203, 0.1); /* Light purple background */
+  border-radius: 5px;
+  border: 2px solid #6a11cb; /* Purple border */
+  color: #333; /* Dark text for contrast */
+}
+
+.bmi-category {
+  font-weight: bold;
+  color: #2575fc; /* Blue text for category */
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
   .container {
-    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  
-  input[type="text"], input[type="radio"] {
-    margin: 10px 0;
+
+  h1 {
+    font-size: 1.5em;
   }
-  
-  button {
-    background: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+
+  input[type="text"] {
+    width: 90%;
   }
-  
-  button:hover {
-    background: #0056b3;
-  }
-  
-  .result {
-    margin-top: 20px;
-    font-size: 1.2em;
-  }
-  
-  .bmi-category {
-    font-weight: bold;
-    color: #007BFF;
-  }
+}

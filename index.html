@@ -18,13 +18,20 @@
       <input type="text" id="weight" placeholder="Enter weight">
       <br>
       <label>
-        <input type="radio" name="unit" value="metric" checked> Metric (cm/kg)
+        <input type="radio" name="weightUnit" value="kg" checked> Kilograms (kg)
       </label>
       <label>
-        <input type="radio" name="unit" value="imperial"> Imperial (inches/lbs)
+        <input type="radio" name="weightUnit" value="lb"> Pounds (lb)
       </label>
       <br>
-      <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+      <label>
+        <input type="radio" name="heightUnit" value="m" checked> Meters (m)
+      </label>
+      <label>
+        <input type="radio" name="heightUnit" value="in"> Inches (in)
+      </label>
+      <br>
+      <button type="button" id="calculateBtn">Calculate BMI</button>
     </form>
     <div class="result" id="result">
       Your BMI: <span id="bmiValue"></span>
