@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log(`Selected Units - Weight: ${weightUnit}, Height: ${heightUnit}`); // Debugging line
 
-    // Check if weight and height are valid numbers
+    // Check if weight and height are valid numbers and greater than 0
     if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-      alert("Please enter valid numbers for weight and height.");
+      alert("Please enter valid numbers for weight and height (greater than 0).");
       return;
     }
 
@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
     } else if (heightUnit === 'in') {
       height = height * 0.0254; // Convert inches to meters
       console.log(`Height after conversion: ${height} m`); // Debugging line
+    }
+
+    // Check if height is still 0 after conversion (e.g., if input was 0)
+    if (height === 0) {
+      alert("Height cannot be 0. Please enter a valid height.");
+      return;
     }
 
     // Correct BMI Calculation (weight in kg, height in meters)
